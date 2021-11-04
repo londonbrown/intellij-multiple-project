@@ -1,0 +1,23 @@
+<idea-plugin>
+    <id>com.lahiyam.intellij-multiple-project</id>
+    <name>Multiple Project</name>
+    <vendor email="noone@lahiyam.com" url="https://lahiyam.com">Lahiyam</vendor>
+
+    <description><![CDATA[
+    Changleog stuff that involves changes and things.<br>
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends optional="true" config-file="gradle-support.xml">org.jetbrains.plugins.gradle</depends>
+    <depends optional="true" config-file="ruby-support.xml">org.jetbrains.plugins.ruby</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>

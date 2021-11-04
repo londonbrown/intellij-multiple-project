@@ -1,0 +1,17 @@
+plugins {
+    id 'org.jetbrains.intellij'
+}
+
+dependencies {
+    implementation project(":community")
+}
+
+intellij {
+    def parentIntellijTask = project(':community').intellij
+    version.set("IU-${intellijSettings.version}")
+    pluginName.set(parentIntellijTask.pluginName)
+    plugins.set(intellijSettings.plugins + intellijSettings.IC_plugins + intellijSettings.IU_plugins)
+}
+repositories {
+    mavenCentral()
+}

@@ -1,0 +1,27 @@
+buildscript {
+    def oldestSupportedProfile = '2021_1'
+    def profileName = project.hasProperty("profile") ? profile : oldestSupportedProfile
+    def configFile = file('buildSupport/intellijProfiles.groovy')
+    project.ext.intellijSettings = new ConfigSlurper(profileName).parse(configFile.toURI().toURL())
+}
+
+plugins {
+    id 'org.jetbrains.intellij' version '1.2.1'
+}
+
+group 'com.lahiyam'
+version '1.0'
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version.set("IC-${intellijSettings.version}")
+    pluginName.set("Multiple Project")
+}
+patchPluginXml {
+    changeNotes = """
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>"""
+}
+repositories {
+    mavenCentral()
+}

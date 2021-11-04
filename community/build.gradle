@@ -1,0 +1,13 @@
+plugins {
+    id 'org.jetbrains.intellij'
+}
+
+intellij {
+    def rootIntelliJTask = rootProject.intellij
+    version.set("IC-${intellijSettings.version}")
+    pluginName.set(rootIntelliJTask.pluginName)
+    plugins.set(intellijSettings.plugins + intellijSettings.IC_plugins)
+}
+repositories {
+    mavenCentral()
+}
