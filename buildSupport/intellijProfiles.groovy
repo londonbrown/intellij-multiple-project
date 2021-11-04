@@ -21,7 +21,7 @@ environments {
         ]
     }
     "2021.2" {
-        version: "2021.2.3"
+        version = "2021.2"
         plugins = [
                 'java',
                 'gradle',
@@ -33,10 +33,10 @@ environments {
                 'yaml',
                 'terminal'
         ]
-        IC_plugins: [
+        IC_plugins = [
                 'PythonCore:212.4746.92'
         ]
-        IU_plugins: [
+        IU_plugins = [
                 'Pythonid:212.4746.92',
                 'org.jetbrains.plugins.ruby:212.4746.92'
         ]
